@@ -4,8 +4,8 @@ import static br.ce.wcaquino.appium.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
 
-public class DSL {   //ONDE TODOS OS MÉTODOS GENÉRICOS FICA GUARDADOS PARA QUANDO PRECISAR, PEGAR DAQUI 
-	
+public class BasePage {
+
 	public void escrever(By by, String texto) {
 		getDriver().findElement(by).sendKeys(texto);   	
 	}
@@ -42,3 +42,4 @@ public class DSL {   //ONDE TODOS OS MÉTODOS GENÉRICOS FICA GUARDADOS PARA QUAND
 	
 	
 }
+

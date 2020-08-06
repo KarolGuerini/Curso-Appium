@@ -2,23 +2,18 @@ package br.ce.wcaquino.appium.test;
 
 import java.net.MalformedURLException;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
-import br.ce.wcaquino.appium.core.DSL;
-import br.ce.wcaquino.appium.core.DriverFactory;
+import br.ce.wcaquino.appium.core.BaseTest;
 import br.ce.wcaquino.appium.page.FormularioPage;
 import br.ce.wcaquino.appium.page.MenuPage;
-import io.appium.java_client.MobileBy;
 
-public class FormularioTeste {
+public class FormularioTeste extends BaseTest{
 	
 	//private AndroidDriver<MobileElement> driver;
 	
-	private DSL dsl = new DSL();
 	
 	private MenuPage menu = new MenuPage();
 	
@@ -37,10 +32,7 @@ public class FormularioTeste {
 	    //driver.findElement(By.xpath("//android.widget.TextView[@text='Formulário']")).click();  //modo padrão xpath: //class[@atrib='value']
 	}
 	
-	@After
-	public void tearDown() {
-	   DriverFactory.killDriver();
-	}
+	
 	
 	
 	@Test
