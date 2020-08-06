@@ -1,4 +1,4 @@
-package br.ce.wcaquino.appium;
+package br.ce.wcaquino.appium.test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -21,7 +21,7 @@ public class CalculadoraTeste {
 	    desiredCapabilities.setCapability("appPackage", "com.android.calculator2");
 	    desiredCapabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
 	    
-	    AndroidDriver<MobileElement> driver= new AndroidDriver(new URL("http://localhost:4723/wd/hub")
+	    AndroidDriver<MobileElement> driver= new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub")
 , desiredCapabilities);
 	    
 	    MobileElement el3 = (MobileElement) driver.findElementById("com.android.calculator2:id/digit_2");
