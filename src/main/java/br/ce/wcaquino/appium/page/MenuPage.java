@@ -7,7 +7,6 @@ public class MenuPage extends BasePage{
 	
 	public void AcessarFormulario() {
 		clicarPorTexto("Formulário");
-
 		
 	}
 	
@@ -18,5 +17,14 @@ public class MenuPage extends BasePage{
 	public void acessarAlertas() {
 		clicarPorTexto("Alertas");
 	}
+	
+	public void acessarMenuAbas() {
+		clicarPorTexto("Abas");
+	}
+	
+	public void acessarAccordion() {
+		clicarPorTexto("Accordion");
+	}
+	
 
 }
