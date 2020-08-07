@@ -1,12 +1,14 @@
 package br.ce.wcaquino.appium.test;
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import br.ce.wcaquino.appium.core.BaseTest;
+import br.ce.wcaquino.appium.core.DriverFactory;
 import br.ce.wcaquino.appium.page.FormularioPage;
 import br.ce.wcaquino.appium.page.MenuPage;
 
@@ -109,6 +111,7 @@ public class FormularioTeste extends BaseTest{
 	}
 	
 	
+	
 	@Test
 	public void deveRealizarCadastro() throws MalformedURLException {
 		
@@ -157,6 +160,26 @@ public class FormularioTeste extends BaseTest{
 	   // Assert.assertTrue(check.getText().endsWith("Marcado")); 
 	  
 	}
+	
+	@Test
+	public void deveRealizarCadastroDemorado() throws MalformedURLException {
+	    
+	    //preencher campos
+		page.escreverNome("Karol Guerini");
+	   
+	    
+	    //clicar em salvar 
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //espera o elemento aparecer na tela e pode ser usado tanto em cada caso de teste como na configuração do Driver 
+		page.salvarDemorado();
+		esperar(3000);  // uma opção para esperar o elemento na tela, mas não é muito usual 
+		
+		
+	    
+	    //verificações
+	    Assert.assertEquals("Nome: Karol Guerini",page.obterNomeCadastrado());
+	  
+	}
+	
 
 	
 }	

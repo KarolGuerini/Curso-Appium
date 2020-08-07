@@ -36,7 +36,7 @@ public class DriverFactory {
 			e.printStackTrace();
 		}
 	    
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 	    
 	   
 	}
