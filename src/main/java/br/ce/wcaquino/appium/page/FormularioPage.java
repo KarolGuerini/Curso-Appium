@@ -3,7 +3,9 @@ package br.ce.wcaquino.appium.page;
 import org.openqa.selenium.By;
 
 import br.ce.wcaquino.appium.core.BasePage;
+import br.ce.wcaquino.appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 
 public class FormularioPage extends BasePage {
 	
@@ -41,6 +43,22 @@ public class FormularioPage extends BasePage {
 		return isCkeckMarcado(MobileBy.AccessibilityId("switch"));	
 	}
 	
+	public void clicarSeekBar(double posicao) {
+		
+		int delta = 50;
+       MobileElement seek = DriverFactory.getDriver().findElement(MobileBy.AccessibilityId("slid"));
+       int y = (int) (seek.getLocation().y + (seek.getSize().height / 2));
+       System.out.println(y);
+       
+       int xInicial = seek.getLocation().x + delta;
+       int x = (int) (xInicial + ((seek.getSize().width- 2*delta) * posicao));
+       System.out.println(x);
+       
+       tap(x, y);
+       
+       
+	}
+	
 	public void salvar() {
 		  clicarPorTexto("SALVAR");
 	}
@@ -70,6 +88,8 @@ public class FormularioPage extends BasePage {
 		return  obterTexto(By.xpath("//android.widget.TextView[starts-with(@text, 'Switch:')]")); 
 
 	}
+	
+	
 	  
 	
 }

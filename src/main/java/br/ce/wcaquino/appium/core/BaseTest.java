@@ -18,7 +18,7 @@ public class BaseTest {
 	@After
 	public void tearDown() {
 	
-	   DriverFactory.getDriver().resetApp();
+	  // DriverFactory.getDriver().resetApp();
 	}
 	
 	public void esperar(long tempo) {
